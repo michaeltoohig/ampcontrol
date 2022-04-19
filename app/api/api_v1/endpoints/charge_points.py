@@ -19,8 +19,8 @@ router = APIRouter()
 async def find_nearest_charge_point(
     db: AsyncSession = Depends(get_db),
     *,
-    lat: float = Query(...),
-    lng: float = Query(...),
+    lat: float = Query(..., ge=-90, le=90),
+    lng: float = Query(..., ge=-180, le=180),
 ) -> ChargePointSchemaOut:
     crud_cp = CRUDChargePoint(db)
     charge_point = await crud_cp.find_nearest(lat, lng)

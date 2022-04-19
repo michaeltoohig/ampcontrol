@@ -2,7 +2,7 @@ from typing import Any
 from typing import Dict
 from typing import Optional
 
-from pydantic import BaseSettings
+from pydantic import BaseSettings, EmailStr
 from pydantic import PostgresDsn
 from pydantic import validator
 
