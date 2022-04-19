@@ -1,4 +1,4 @@
-# Ampcontrol mini project
+# Charge Points API
 
 
 ##  Description
@@ -58,14 +58,12 @@ ampcontrol
 
 ##  Getting Started
 
-Getting started developing with this template is pretty simple using docker and docker-compose.
-
 ```shell script
 # Clone the repository
-git clone git@github.com:michaeltoohig/ampcontrol.git
+git clone git@github.com:michaeltoohig/charge_points_api.git
 
 # cd into project root
-cd ampcontrol
+cd charge_points_api
 
 # Launch the project
 docker-compose up
