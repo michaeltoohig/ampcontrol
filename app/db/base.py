@@ -2,4 +2,5 @@
 # imported by Alembic
 
 from app.db.base_class import Base  # noqa
+from app.models.charge_point import ChargePoint  # noqa
 from app.models.user import User  # noqa
