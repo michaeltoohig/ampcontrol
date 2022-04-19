@@ -1,48 +1,60 @@
-# fastapi-starter-template
+# Ampcontrol mini project
 
 
 ##  Description
 
-This is a basic python api setup using the FastAPI framework. It is deployable to the cloud out of the box without much configuration or changes needed (if any at all).
+A simple API for charge points.
 
 ###  Directory Structure
 ```
-fastapi-starter-template
-├── app
-│   ├── api
-│   │   ├── endpoints
-│   │   │   ├── __init__.py
-│   │   │   └── hello.py
-│   │   └── __init__.py
-│   ├── core
-│   │   ├── __init__.py
-│   │   └── application.py
-│   ├── __init__.py
-│   └── main.py
-├── tests
-│   ├── endpoints
-│   │   └── hello_test.py
-│   ├── __init__.py
-│   └── conftest.py
-├── Dockerfile
-├── README.md
-├── docker-compose.yaml
-├── poetry.lock
-├── pyproject.toml
-└── tox.ini
+ampcontrol
+├─ app
+│  ├─ api
+│  │  ├─ api_v1
+│  │  │  ├─ api.py
+│  │  │  └─ endpoints
+│  │  │     ├─ auth.py
+│  │  │     └─ charge_points.py
+│  │  ├─ deps
+│  │  │  ├─ charge_point.py
+│  │  │  ├─ db.py
+│  │  │  └─ user.py
+│  │  └─ root.py
+│  ├─ core
+│  │  ├─ application.py
+│  │  ├─ config.py
+│  │  ├─ logger.py
+│  │  └─ users.py
+│  ├─ crud
+│  │  ├─ base.py
+│  │  └─ charge_point.py
+│  ├─ db
+│  │  ├─ base.py
+│  │  ├─ base_class.py
+│  │  ├─ exceptions.py
+│  │  └─ session.py
+│  ├─ main.py
+│  ├─ models
+│  │  ├─ charge_point.py
+│  │  └─ user.py
+│  ├─ schemas
+│  │  ├─ base.py
+│  │  ├─ charge_point.py
+│  │  └─ user.py
+│  └─ tests
+│     ├─ conftest.py
+│     ├─ endpoints
+│     │  ├─ charge_point_test.py
+│     │  └─ root_test.py
+│     └─ utils
+│        ├─ user.py
+│        └─ utils.py
+├─ Dockerfile
+├─ docker-compose.yaml
+├─ poetry.lock
+├─ pyproject.toml
+└─ tox.ini
 ```
-
-###  Features
-
--  Logging
-
--  Testing & Coverage
-
--  REST API support
-
--  Automatic API documentation
-
--  Pre-Commit Code Linting & Formatting
 
 ##  Getting Started
 
@@ -77,9 +89,4 @@ linting and formatting as long as the pre-commit hooks were installed. We'll tal
 
 ### Alternative Testing Only
 
-`poetry run pytest -s` skips tox and just tests in your local environment
-
-# Code Formatting & Linting
-
-To activate pre-commit formatting and linting all you need to do is run `pre-commit install` from the root of your local git repository. Now
-every time you try to make a commit, the code will be formatted and linted for errors first.
+`pytest -s` skips tox and just tests in your local environment
